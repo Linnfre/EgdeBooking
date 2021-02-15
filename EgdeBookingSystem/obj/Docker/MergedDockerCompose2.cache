@@ -3,6 +3,7 @@ services:
     environment:
       ACCEPT_EULA: "Y"
       SA_PASSWORD: Password123@
+    hostname: equipment
     image: microsoft/mssql-server-linux
     ports:
     - target: 1443

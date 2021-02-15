@@ -3,7 +3,7 @@ services:
     environment:
       ACCEPT_EULA: "Y"
       SA_PASSWORD: Password123@
-    image: microsoft/mssql-server-linux
+    image: mcr.microsoft.com/mssql/server
     ports:
     - target: 1443
   egdebookingsystem:

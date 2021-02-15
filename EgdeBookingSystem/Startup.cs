@@ -31,21 +31,31 @@ namespace EgdeBookingSystem
             {
                 // Database connection string.
                 // Make sure to update the Password value below from "your_password" to your actual password.
-                var connection = @"Server=db;Database=Equipment;User=sa;Password=Password123@;";
+                var connection = @"Server=db;Database=master;User=sa;Password=Password123@;";
 
                 // This line uses 'UseSqlServer' in the 'options' parameter
                 // with the connection string defined above.
                 services.AddDbContext<ApplicationDbContext>(
                     options => options.UseSqlServer(connection));
-                services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+
+
+                services.AddIdentity<IdentityUser, IdentityRole>()
+                     .AddEntityFrameworkStores<ApplicationDbContext>()
+                     .AddDefaultTokenProviders();
+
+
+               /* 
+                services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
                     .AddEntityFrameworkStores<ApplicationDbContext>();
+                */
                 services.AddRazorPages();
-            
+                
+
               //  services.AddMvc();
 
                 // Add application services.
-           //     services.AddTransient<IEmailSender, AuthMessageSender>();
-            //    services.AddTransient<ISmsSender, AuthMessageSender>();
+               // services.AddTransient<IEmailSender, AuthMessageSender>();
+               // services.AddTransient<ISmsSender, AuthMessageSender>();
             }
         }
 

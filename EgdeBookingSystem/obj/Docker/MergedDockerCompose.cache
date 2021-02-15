@@ -4,6 +4,8 @@ services:
       ACCEPT_EULA: "Y"
       SA_PASSWORD: Password123@
     image: microsoft/mssql-server-linux
+    ports:
+    - target: 1443
   egdebookingsystem:
     build:
       context: C:\Users\nerga\Bachelor\dockerTest\Go4IT\EgdeBookingSystem
