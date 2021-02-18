@@ -8,9 +8,7 @@ services:
         com.microsoft.created-by: "visual-studio"
         com.microsoft.visual-studio.project-name: "EgdeBookingSystem"
     volumes:
-      - C:\Users\nerga\vsdbg\vs2017u5:/remote_debugger:rw
-      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
-      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - /Users/linnfredriksen/vsdbg/vs2017u5:/remote_debugger:rw
 
     entrypoint: tail -f /dev/null
     labels:

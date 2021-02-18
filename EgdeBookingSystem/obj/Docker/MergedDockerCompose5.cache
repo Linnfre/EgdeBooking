@@ -5,15 +5,14 @@ services:
       SA_PASSWORD: Password123@
     image: mcr.microsoft.com/mssql/server
     ports:
-    - target: 1443
+    - target: 1433
   egdebookingsystem:
     build:
-      context: C:\Users\nerga\Bachelor\dockerTest\Go4IT\EgdeBookingSystem
+      context: /Users/Shared/testdocker/ComposeTest/EgdeBookingSystem
       dockerfile: Dockerfile
       labels:
         com.microsoft.created-by: visual-studio
         com.microsoft.visual-studio.project-name: EgdeBookingSystem
-      target: base
     container_name: EgdeBookingSystem
     depends_on:
       db:
@@ -21,13 +20,11 @@ services:
     entrypoint: tail -f /dev/null
     environment:
       ASPNETCORE_ENVIRONMENT: Development
-      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
       ASPNETCORE_URLS: https://+:443;http://+:80
-      DOTNET_USE_POLLING_FILE_WATCHER: '1'
-      NUGET_FALLBACK_PACKAGES: ''
-    image: egdebookingsystem:dev
+    image: egdebookingsystem
     labels:
-      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages  "/app/bin/Debug/netcoreapp3.1/EgdeBookingSystem.dll"'
+      com.microsoft.visual-studio.project-name: EgdeBookingSystem
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages  "/app/EgdeBookingSystem.dll"'
       com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
         dotnet); then kill $$PID; fi"
       com.microsoft.visualstudio.debuggee.program: dotnet
@@ -39,10 +36,7 @@ services:
     - target: 443
     tty: true
     volumes:
-    - C:\Users\nerga\Bachelor\dockerTest\Go4IT\EgdeBookingSystem:/app:rw
-    - C:\Users\nerga\vsdbg\vs2017u5:/remote_debugger:rw
-    - C:\Users\nerga\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
-    - C:\Users\nerga\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
-    - C:\Users\nerga\.nuget\packages:/root/.nuget/packages:ro
-    - C:\Users\nerga\Bachelor\dockerTest\Go4IT\EgdeBookingSystem:/src:rw
+    - /Users/linnfredriksen/vsdbg/vs2017u5:/remote_debugger:rw
+    - /ASP.NET/Https:/root/.aspnet/https:ro
+    - /Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
 version: '3.4'

@@ -9261,26 +9261,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\nerga\\.nuget\\packages\\": {}
+    "/Users/linnfredriksen/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nerga\\Bachelor\\dockerTest\\Go4IT\\EgdeBookingSystem\\EgdeBookingSystem.csproj",
+      "projectUniqueName": "/Users/Shared/testdocker/ComposeTest/EgdeBookingSystem/EgdeBookingSystem.csproj",
       "projectName": "EgdeBookingSystem",
-      "projectPath": "C:\\Users\\nerga\\Bachelor\\dockerTest\\Go4IT\\EgdeBookingSystem\\EgdeBookingSystem.csproj",
-      "packagesPath": "C:\\Users\\nerga\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nerga\\Bachelor\\dockerTest\\Go4IT\\EgdeBookingSystem\\obj\\",
+      "projectPath": "/Users/Shared/testdocker/ComposeTest/EgdeBookingSystem/EgdeBookingSystem.csproj",
+      "packagesPath": "/Users/linnfredriksen/.nuget/packages/",
+      "outputPath": "/Users/Shared/testdocker/ComposeTest/EgdeBookingSystem/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\nerga\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/linnfredriksen/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -9352,7 +9350,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.103/RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -14,12 +14,10 @@ services:
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       - NUGET_FALLBACK_PACKAGES=
     volumes:
-      - C:\Users\nerga\Bachelor\dockerTest\Go4IT\EgdeBookingSystem:/app
-      - C:\Users\nerga\Bachelor\dockerTest\Go4IT\EgdeBookingSystem:/src
-      - C:\Users\nerga\vsdbg\vs2017u5:/remote_debugger:rw
-      - C:\Users\nerga\.nuget\packages\:/root/.nuget/packages:ro
-      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
-      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - /Users/Shared/testdocker/ComposeTest/EgdeBookingSystem:/app
+      - /Users/Shared/testdocker/ComposeTest/EgdeBookingSystem:/src
+      - /Users/linnfredriksen/vsdbg/vs2017u5:/remote_debugger:rw
+      - /Users/linnfredriksen/.nuget/packages/:/root/.nuget/packages:ro
 
     entrypoint: tail -f /dev/null
     labels:
